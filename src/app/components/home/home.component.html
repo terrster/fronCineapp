@@ -1,0 +1,26 @@
+<main class="bg-dark">
+<app-modal></app-modal>
+<section class="container-sm">
+    <div class="">
+        <div class="row mt-2 border-bottom">
+            <div class="col-12 col-lg-auto p-3 p-lg-0 text-center h-100 w-100 mb-2 text-white">
+                <h2 class="title">Películas populares</h2>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-col-md-5 gx-5 gy-4 mt-2">
+            <div class="col card-group col-lg-4 pe-auto"*ngFor="let pelicula of peliculas">
+                <div class="card text-white card-has-bg click-col" (click)="_peliculas.goto(['detalles' ,pelicula.id, pelicula.title])"
+                    [ngStyle]="{backgroundImage:'url(https://image.tmdb.org/t/p/w500'+pelicula.poster_path+')'}">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h4 class="card-title mt-0 text-white">{{pelicula.title}}</h4>
+                            <small>{{pelicula.release_date}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+

@@ -1,0 +1,21 @@
+<main class="bg-dark">
+  <div class="row wraper" *ngFor="let genero of ListPeliculas">
+    <h2 class="display-5 fw-bolder text-white mt-2">{{ genero.genero }}</h2 >
+    <hr />
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4 flex-nowrap position-relative" id="slider">
+        <button type="button" class="btn btn-light position-absolute top-50 start-0 translate-middle-y text-white display-5 fw-bolder"><</button> 
+        <button type="button" class="btn btn-light position-absolute top-50 end-0 translate-middle-y text-white display-5 fw-bolder">></button>   
+        <div class="col " *ngFor="let pelicula of genero.peliculas" >
+          <div class="card h-100" 
+          [ngStyle]="{backgroundImage:'url(https://image.tmdb.org/t/p/w500'+pelicula.backdrop_path+')'}">
+            <div class="card-body card_bg text-white">
+              <h3 class="card-title">{{pelicula.title}}</h3>
+              <p class="card-text">Text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

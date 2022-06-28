@@ -1,0 +1,17 @@
+
+.img_cir{
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    background-image: url('../../../assets/img/IMG_20211112_152729.jpg');
+    background-position: calc(50%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 0.3em 0.3em rgba(255, 255, 255, 0.822);
+
+}
+
+.img_cir:hover{
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    
+}

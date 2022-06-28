@@ -1,0 +1,14 @@
+.card{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+h5{
+    cursor: pointer;
+}
+

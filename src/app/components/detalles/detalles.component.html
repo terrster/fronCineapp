@@ -1,0 +1,53 @@
+<main class="">
+  <!-- Header-->
+  <section class="bg-dark py-5">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="my-5 text-center text-xl-start">
+            <h1 class="display-5 fw-bolder text-white mb-2">
+              {{ pelicula?.title }}
+            </h1>
+            <p class="lead fw-normal text-white-50 mb-4">
+              {{ pelicula?.overview }}
+            </p>
+            <div
+              class="
+                d-grid
+                gap-3
+                d-sm-flex
+                justify-content-sm-center justify-content-xl-start
+              "
+            >
+              <a
+                class="btn btn-primary btn-lg px-4 me-sm-3"
+                (click)="_peliculas.goto(['inicio'])"
+                >Regresar</a
+              >
+              <a class="btn btn-outline-light btn-lg px-4" (click)="video()" *ngIf="videos()"
+                >Ver Trailer</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-xxl-6 d-xl-block text-center has_bg">
+          <img class="img-fluid rounded-3 my-5" [src]="getUrl()" alt="..." />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<ng-container *ngIf="playVideo">
+  <div
+    class="modal d-flex align-items-center justify-content-center"
+    (click)="playVideo = false"
+  >
+    <div class="ratio ratio-16x9 container w-75">
+      <iframe
+        [src]="urlTrailer"
+        frameborder="0"
+        class="embed-responsive-item"
+      ></iframe>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,37 @@
+<main class="bg-dark">
+  <app-modal></app-modal>
+  <div class="container rounded-3">
+    <h1 class="display-5 fw-bolder text-white mb-2">
+      {{ resultados.length }}Resultados
+    </h1>
+
+    <div class="card mb-3 border-0" *ngFor="let resultado of resultados">
+      <div class="row g-0 bg-dark p-2 text-white bg-opacity-75">
+        <div class="col-md-4">
+          <a (click)="_peliculas.goto(['detalles', resultado.id, resultado.title])">
+            <img
+              [src]="getUrl(resultado.poster_path)"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-white">
+            <h5 class="card-title display-6 fw-bolder text-white mb-2" (click)="_peliculas.goto(['detalles', resultado.id, resultado.title])">
+              {{ resultado.title }}
+            </h5>
+            <p class="card-text">
+              <small class="text-muted">{{ resultado.release_date }}</small>
+            </p>
+            <p class="card-text">{{ resultado.overview }}</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
