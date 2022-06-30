@@ -1,0 +1,14 @@
+runtime: nodejs16
+
+instance_class: F2
+
+env_variables: 
+  BUCKET_NAME: "cineappb"
+
+handlers:
+- url: /
+  static_files: dist/cine-app/index.html
+  upload: dist/cine-app/index.html
+
+- url: /
+  static_dir: dist/cine-app
